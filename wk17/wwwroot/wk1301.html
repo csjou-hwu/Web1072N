@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.9.1/aframe.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <a-assets>
+                <img id="my-image" src="BatmanvSuperman.jpg">
+            </a-assets>
+            <a-box color="red" position="0 0 -3"></a-box>
+            <!-- Using the asset management system. -->
+            <a-image src="#my-image" width="16" height="9" position="-25 10 -25"
+                     animation="property: position; to: 25 10 -25; loop: true; dur: 10000"></a-image>
+            <a-image src="#my-image" width="16" height="9" position="0 0 -15"
+                     animation="property: rotation; to: 0 360 0; loop: true; dur: 5000"></a-image>
+            <a-image src="#my-image" width="16" height="9" position="-25 -5 -20"
+                     animation="property: position; to: 25 -5 -20; loop: true; dur: 3000"></a-image>
+
+            <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+            <!--<a-image src="img/BatmanvSuperman.jpg" width="16" height="9"></a-image>-->
+        </a-scene>
+    </body>
+</html>

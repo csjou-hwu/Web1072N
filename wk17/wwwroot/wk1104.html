@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="texture" src="texture.jpg">
+        </a-assets>
+
+        <a-box material="shader:flat; color:red; src:#texture" width="1" height="1" depth="1"
+               position="0 0 0"
+               rotation="45 45 45"
+               scale="1 2.5 1">
+
+        </a-box>
+        <a-box material="shader:flat; color:green; src:#texture" width="1" height="1" depth="1"
+               position="0 0 -2"
+               rotation="45 45 45"
+               scale="1 2.5 1">
+
+        </a-box>
+
+
+        <a-light type="spot" color="#FF0000" position="-20 0 0" look-at="a-box"></a-light>
+        <a-light type="ambient" color="#FFFFFF" position="3 3 3"></a-light>
+
+        <a-sky src="sky2.jpg"></a-sky>
+    </a-scene>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+    
+    <body>
+        <a-scene>
+            <a-assets>
+                <img id="texture" src="texture.jpg">
+            </a-assets>   
+            <a-entity geometry="primitive: box"
+                      material="color: red"
+                      animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500" 
+                      animation__mouseleave="property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500" >
+            </a-entity>
+            <a-box color="#FFFFFF" width="1" height="1" depth="1"
+                   position="0 0 0"
+                   rotation="45 45 45"
+                   scale="1 2.5 1"
+                   animation__mouseenter="property: scale; from: 1 2.5 1; to: 4 1 4; startEvents: mouseenter; dur: 500"
+                   animation__mouseleave="property: rotation; from: 45 45 45; to: 0 360 0; startEvents: mouseleave; dur: 500"
+	               src="#texture">
+            </a-box>
+
+            <a-camera position="0 7 5">
+                <a-cursor color="#FF0000">
+            </a-camera>
+<!-- ref : https://aframe.io/docs/0.9.0/components/animation.html#events -->
+        </a-scene>
+        
+        <!-- interact using vanilla JavaScript when cursor is over the object -->
+        <!-- instead of using <a-event name="mouseenter" scale="4 1 6"></a-event> -->
+        <script>
+            /*var box = document.querySelector( 'a-box' );
+            box.addEventListener( 'mouseenter', function ( )
+            {
+                box.setAttribute( 'scale',
+                {
+                    x: 4,
+                    y: 1,
+                    z: 6
+                } );
+            } );*/
+        </script>
+    </body>
+</html>

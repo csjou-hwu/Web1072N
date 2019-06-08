@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var O = true;
+        function AddOX(event) {
+            var btn = event.target;
+            if (btn.hasChildNodes()) { }
+            else {
+                if (O) {
+                    var txt = document.createTextNode("O");
+                    O = false;
+                }
+                else {
+                    var txt = document.createTextNode("X");
+                    O = true;
+                }
+                btn.appendChild(txt);
+            }
+        }
+    </script>
+</head>
+<body onclick="AddOX(event)">
+    <script>
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                var btn = document.createElement("BUTTON");
+                btn.style.width = "30px";
+                btn.style.height = "30px";
+                btn.style.position = "absolute";
+                btn.style.left = (100 + i * 40).toString() + "px";
+                btn.style.top = (100+ j * 40).toString() + "px";
+                document.body.appendChild(btn);
+            }
+            var br = document.createElement("br");
+            document.body.appendChild(br);
+        }
+    </script>
+</body>
+</html>
